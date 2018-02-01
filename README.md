@@ -30,5 +30,6 @@ If you find an bug/issue or have a feature request, please look first under the 
 
 # Future goals  
  - add music player (e.g. mpd)
+ - configure image viewer properly
  - advanced install script providing package selection 
  - package manager for automatic configuration (maybe not needed)

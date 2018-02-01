@@ -167,6 +167,7 @@ bindsym F11 exec ~/.config/i3/run_app.py
 
 # take screenshot
 bindsym --release Print exec ~/.config/i3/screenshot.sh
+bindsym --release Ctrl+Print exec cd ~/Bilder/Screenshots && exec scrot
 
 # scan document
 bindsym Shift+Print exec hp-scan -m color -o ~/Dokumente/Scans/$(date +%s).png

@@ -156,8 +156,8 @@ cp ~/Tilede/firefox/userContent.css ~/.mozilla/firefox/*.default/chrome/userCont
 # zsh
 #sudo apt install -y zsh
 
-# scrot (commandline image viewer)
-#sudo apt install -y scrot
+# scrot (commandline image viewer and screenshot-app)
+sudo apt install -y scrot
 
 # atom editor (outdated)
 #sudo apt install -y gvfs-bin
