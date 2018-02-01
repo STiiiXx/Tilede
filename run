@@ -161,8 +161,6 @@ cp ~/Tilede/firefox/userContent.css ~/.mozilla/firefox/*.default/chrome/userCont
 
 # atom editor (outdated)
 #sudo apt install -y gvfs-bin
-#cd ~/Run/prog/
-#sudo dpkg -i atom-amd64.deb
 
 # conky
 sudo apt install -y conky
@@ -225,7 +223,7 @@ rm -r ~/Öffentlich/
 sudo mkdir -p /media/$USER
 
 # install GTK-3.0 settings file
-sudo cp ~/Run/gtk3/settings.ini /etc/gtk-3.0/settings.ini
+sudo cp ~/Tilede/gtk/gtk3/settings.ini /etc/gtk-3.0/settings.ini
 
 # install GTK-2.0 settings file
 cp ~/Tilede/gtk/gtk2/.gtkrc-2.0 ~/.gtkrc-2.0
