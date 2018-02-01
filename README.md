@@ -2,6 +2,9 @@
 A set of applications aiming to provide a stable desktop environment built on the base of i3 (-gaps).
 The goal is to provide a fast and battery efficient system for everyday use, especially for programming.
 
+![alt text](https://raw.githubusercontent.com/stiiixx/tilede/master/pictures/screenshots/2018-02-01-132451_1920x1080_scrot.png)
+![alt text](https://raw.githubusercontent.com/stiiixx/tilede/master/pictures/screenshots/1517485153.png)
+
 This includes:
  - tiling-windowmanager (i3-gaps)
  - statusbar (polybar and i3blocks)
