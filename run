@@ -242,7 +242,7 @@ gsettings set org.gnome.desktop.interface icon-theme Papirus
 # install gtk-greeter
 sudo apt remove --purge -y unity-greeter
 sudo apt install -y lightdm-gtk-greeter
-sudo cp ~/Run/lightdm-gtk-greeter.conf /etc/lightdm
+sudo cp ~/Tilede/gtk/lightdm/lightdm-gtk-greeter.conf /etc/lightdm
 
 #done
 echo "Done. Rebooting now"
