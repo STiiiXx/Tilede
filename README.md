@@ -3,8 +3,10 @@ A set of applications aiming to provide a stable desktop environment built on th
 The goal is to provide a fast and battery efficient system for everyday use, especially for programming.
 
 This includes:
+ - tiling-windowmanager (i3-gaps)
  - statusbar (polybar and i3blocks)
  - compositor (compton)
+ - run menu (rofi)
 
 optional:
  - Spotify
@@ -23,4 +25,10 @@ This project is currently tested on Ubuntu 17.10, however every still supported 
 Feel free to ask for help!
 I would be very happy to have any kind of contribution or advise!
 
+# Issues
 If you find an bug/issue or have a feature request, please look first under the 'Issues' tab in GitHub (https://github.com/stiiixx/tilede).
+
+# Future goals  
+ - add music player (e.g. mpd)
+ - advanced install script providing package selection 
+ - package manager for automatic configuration (maybe not needed)
