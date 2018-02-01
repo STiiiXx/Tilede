@@ -5,13 +5,16 @@ echo "Installing Tilede"
 #go to home dir
 cd
 
-# install git 
+# install git
 sudo apt install -y git
 
 # clone git repo
 git clone https://github.com/STiiiXx/Tilede
 
-# install system required packages
+####################################
+# install required packages #
+####################################
+
 sudo apt update --upgrade
 sudo apt install -y build-essential make
 sudo apt install -y xorg i3 i3blocks
@@ -23,8 +26,7 @@ sudo apt install -y lightdm
 sudo apt install -y jq
 sudo apt install -y compton
 #sudo apt install -y dunst
-sudo apt install -y zip unzip
-sudo apt install rofi
+sudo apt install -y rofi
 sudo apt install -y zip unzip
 sudo apt install -y libnotify4 libnotify-bin
 sudo apt install -y redshift
@@ -34,7 +36,6 @@ sudo apt install -y udisks2 udiskie
 sudo apt install -y gksu
 
 # install i3-gaps
-echo "Installing i3-gaps"
 sudo apt install -y libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm0 libxcb-xrm-dev automake
 cd
 git clone https://github.com/Airblader/i3 i3-gaps
@@ -89,8 +90,7 @@ sudo apt install -y polybar
 # GTK-3.0
 # install gtk-3.0 icon theme (Papirus)
 sudo apt install -y software-properties-common
-sudo add-apt-repository ppa:papirus/papirus
-sudo apt-get update
+sudo add-apt-repository -y -u ppa:papirus/papirus
 sudo apt-get install -y papirus-icon-theme
 # install gtk-3.0 theme (Arc-Dark)
 sudo cp -r ~/Run/gtk3/Arc-Dark /usr/share/themes/Arc-Dark/
@@ -100,7 +100,6 @@ sudo cp ~/Run/gtk3/index.theme /usr/share/icons/default/index.theme
 
 # install rxvt-unicode (deprecated)
 #sudo apt install -y rxvt-unicode
-#cp ~/Run/.Xresources ~/.Xresources
 
 # install termite (terminal emulator)
 cd
@@ -115,7 +114,7 @@ cd termite && make && sudo make install
 sudo ldconfig
 sudo mkdir -p /lib/terminfo/x
 sudo ln -s /usr/local/share/terminfo/x/xterm-termite /lib/terminfo/x/xterm-termite
-rm -rf ~/vte-ng-0.50.2.a/ ~/termite/
+rm -rf ~/vte-ng-0.50.2.a/ ~/termite/ 0.50.2.a.zip
 mkdir -p ~/.config/termite/
 cp ~/Run/termite/config ~/.config/termite/config
 cd
@@ -130,8 +129,9 @@ pip install netifaces
 pip install power
 sudo apt install -y python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2-gtk-3.0 gir1.2-gtksource-3.0
 
-
-# install optional packages
+#############################
+# install optional packages #
+#############################
 
 # spotify
 #sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
@@ -142,8 +142,11 @@ sudo apt install -y python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2
 # geany
 #sudo apt install -y geany
 
-# ranger
+# ranger (file manager command-line)
 #sudo apt install -y ranger
+
+# nautilus (file manager gui)
+sudo apt install -y nautilus
 
 # firefox
 sudo apt install -y firefox
@@ -166,7 +169,7 @@ cp ~/Run/userContent.css ~/.mozilla/firefox/*.default/chrome/userContent.css
 sudo apt install -y conky
 
 # gimp
-#sudo apt install -y gimp 
+#sudo apt install -y gimp
 
 # libreoffice
 #sudo apt install -y libreoffice
@@ -174,10 +177,12 @@ sudo apt install -y conky
 # Dropbox
 #cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 
-# configuration of programs
+#############################
+# configuration of programs #
+#############################
 
 # install fonts
-sudo cp -r ~/Run/fonts/* /usr/share/fonts/
+sudo cp -r ~/Tilede/fonts/* /usr/share/fonts/
 
 # install config files
 cp -r ~/Tilede/.config/ ~
@@ -195,7 +200,7 @@ sudo cp ~/Tilede/pictures/unknown_badge.png /usr/share/unity-greeter/
 # if zsh is installed: install oh-my-zsh
 #sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 #copy .zshrc file
-#cp ~/Run/.zshrc ~
+#cp ~/Tilede/.zshrc ~
 
 # set git password cache (store password for 1h)
 git config --global credential.helper cache
@@ -207,7 +212,7 @@ cd
 # create dirs
 mkdir -p ~/Bilder/Screenshots/
 mkdir -p ~/Bilder/Backgrounds/
-cp ~/Run/pics/bg.jpg ~/Bilder/Backgrounds/
+cp ~/Tilede/picrures/bg.jpg ~/Bilder/Backgrounds/
 mkdir -p ~/Dokumente/Studium/
 mkdir -p ~/Dokumente/Arbeit/
 mkdir -p ~/Dokumente/Scans/

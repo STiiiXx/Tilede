@@ -11,7 +11,7 @@ exec_always --no-startup-id feh -F --bg-scale ~/Bilder/Backgrounds/bg.jpg
 exec_always --no-startup-id ~/.config/polybar/polybar.sh
 
 # execute conky
-exec --no-startup-id conky
+exec --no-startup-id conky --config ~/.config/conky/config
 
 # execute clipit
 exec --no-startup-id clipit
