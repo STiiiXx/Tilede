@@ -1,0 +1,272 @@
+#!/bin/bash
+
+echo "Installing Tilede"
+
+#go to home dir
+cd
+
+# update
+sudo apt update --upgrade
+
+# install make and build essential
+sudo apt install -y build-essential make
+
+# install xorg and i3
+sudo apt install -y xorg i3 i3blocks
+
+# install git
+sudo apt install -y git
+
+# install spotify
+#sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
+#sudo echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+#sudo apt-get update
+#sudo apt-get install -y spotify-client
+
+# install geany
+#sudo apt install -y geany
+
+# install ranger
+#sudo apt install -y ranger
+
+# install imagemagick
+#sudo apt install -y imagemagick
+
+# install feh
+sudo apt install -y feh
+
+# install pulseaudio
+sudo apt install -y pulseaudio pavucontrol
+
+# install firefox
+sudo apt install -y firefox
+# fix firefox changing dark input fields
+mkdir -p ~/.mozilla/firefox/*.default/chrome/
+cp ~/Run/userContent.css ~/.mozilla/firefox/*.default/chrome/userContent.css
+
+# install wicd
+#sudo apt install -y wicd
+
+# install display manager
+sudo apt install -y lightdm
+
+# install scrot
+#sudo apt install -y scrot
+
+# set default session to i3
+cd /usr/share/lightdm/lightdm.conf.d/
+sudo touch 50-myconfig.conf
+sudo chown $USER:$USER 50-myconfig.conf
+sudo echo "[SeatDefaults]" >> 50-myconfig.conf
+sudo echo "user-session=i3" >> 50-myconfig.conf
+cd
+
+# install jq
+sudo apt install -y jq
+
+# install oh-my-zsh
+# sudo apt install -y zsh
+# sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+# install pip
+sudo apt install -y python-pip
+sudo apt install -y python3-pip
+
+# install modules
+pip install requests
+pip install psutil
+pip install netifaces
+pip install power
+sudo apt install -y python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2-gtk-3.0 gir1.2-gtksource-3.0
+
+# clone git repo
+git clone https://github.com/STiiiXx/Run
+echo "Copy fonts"
+sudo cp -r ~/Run/fonts/* /usr/share/fonts/
+echo "Copy i3 config"
+mkdir -p ~/.config/i3/
+cp -r ~/Run/i3/* ~/.config/i3/
+
+# copy .zshrc file
+# cp ~/Run/.zshrc ~
+
+# set git password cache (store password for 1h)
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=3600'
+git config --global user.email robin_luley@web.de
+git config --global user.name STiiixx
+cd
+
+# create dirs
+mkdir -p ~/Bilder/Screenshots/
+mkdir -p ~/Bilder/Backgrounds/
+cp ~/Run/pics/bg.jpg ~/Bilder/Backgrounds/
+mkdir -p ~/Dokumente/Studium/
+mkdir -p ~/Dokumente/Arbeit/
+mkdir -p ~/Dokumente/Scans/
+mkdir -p ~/code/py/
+
+# create robix files
+sudo ln -s ~/Run/ud /usr/bin/ud
+sudo ln -s ~/Run/robix-update /usr/bin/robix-update
+
+# delete unneccesary folders
+rm -r ~/Podcasts/
+rm -r ~/Audiobooks/
+rm -r ~/Öffentlich/
+
+# create i3 badge for lightdm
+sudo cp ~/Run/pics/unknown_badge.png /usr/share/unity-greeter/
+
+# install atom editor
+#sudo apt install -y gvfs-bin
+#cd ~/Run/prog/
+#sudo dpkg -i atom-amd64.deb
+
+# install compton
+sudo apt install -y compton
+cp ~/Run/i3/compton ~/.config/i3/
+
+# install i3-gaps
+echo "Installing i3-gaps"
+sudo apt install -y libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm0 libxcb-xrm-dev automake
+cd
+git clone https://github.com/Airblader/i3 i3-gaps
+cd i3-gaps
+autoreconf --force --install
+rm -rf build/
+mkdir -p build && cd build/
+../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
+make
+sudo make install
+cd
+rm -rf i3-gaps
+
+# install i3lock-color
+#cd
+#sudo apt-get install -y pkg-config libxcb1 libpam-dev libcairo-dev libxcb-composite0 libxcb-composite0-dev libxcb-xinerama0-dev libev-dev libx11-dev libx11-xcb-dev libxkbcommon0 libxkbcommon-x11-0 libxcb-dpms0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xkb-dev libxkbcommon-x11-dev libxkbcommon-dev libjpeg-turbo8 libjpeg-turbo8-dev
+#git clone https://github.com/PandorasFox/i3lock-color
+#cd i3lock-color
+#autoreconf -i && ./configure && make
+#cd
+#rm -rf i3lock-color
+
+#polybar deps
+echo installing polybar
+#cd
+sudo apt install -y cmake cmake-data libcairo2-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xkb-dev pkg-config python-xcbgen libxcb-xrm-dev i3-wm libasound2-dev libmpdclient-dev libiw-dev libcurl4-openssl-dev libxcb-cursor-dev
+#install xcb-proto
+#cd
+#wget https://launchpad.net/ubuntu/+archive/primary/+files/xcb-proto_1.11.orig.tar.gz
+#tar xfz xcb-proto_1.11.orig.tar.gz
+#wget https://launchpadlibrarian.net/223243136/xcb-proto_1.11-1.diff.gz
+#gzip -d xcb-proto_1.11-1.diff.gz
+#cd xcb-proto-1.11
+#patch -p1 <../xcb-proto_1.11-1.diff
+#./configure
+#make
+#sudo make install
+#cd
+#rm -rf xcb-proto-1.11
+#rm xcb-proto_1.11.orig.tar.gz
+#rm xcb-proto_1.11-1.diff.gz
+#rm xcb-proto_1.11-1.diff
+#install polybar
+#git clone https://github.com/jaagr/polybar
+#cd polybar
+#./build.sh
+#rm -rf ~/polybar/
+cd
+echo "deb http://archive.getdeb.net/ubuntu zesty-getdeb apps" | sudo tee -a /etc/apt/sources.list
+wget -q -O- http://archive.getdeb.net/getdeb-archive.key | sudo apt-key add -
+sudo apt update
+sudo apt install -y polybar
+
+#copy polybar config files
+mkdir -p ~/.config/polybar/
+cp -r ~/Run/polybar/* ~/.config/polybar/
+
+#creating mount points
+sudo mkdir -p /media/$USER
+
+#copy gtk settings file
+sudo cp ~/Run/gtk3/settings.ini /etc/gtk-3.0/settings.ini
+
+#install gtk-3.0 icon theme (Papirus)
+sudo apt install -y software-properties-common
+sudo add-apt-repository ppa:papirus/papirus
+sudo apt-get update
+sudo apt-get install -y papirus-icon-theme
+#install gtk-3.0 theme (Arc-Dark)
+sudo cp -r ~/Run/gtk3/Arc-Dark /usr/share/themes/Arc-Dark/
+#install gtk-3.0 cursor theme (OpenZone_White)
+sudo cp -r ~/Run/gtk3/OpenZone_White /usr/share/icons/
+sudo cp ~/Run/gtk3/index.theme /usr/share/icons/default/index.theme
+
+#install gtk-2.0 themes
+cp ~/Run/gtk2/.gtkrc-2.0 ~/.gtkrc-2.0
+
+#set gtk themes
+gsettings set org.gnome.desktop.interface gtk-theme Arc-Dark
+gsettings set org.gnome.desktop.wm.preferences theme Arc-Dark
+gsettings set org.gnome.desktop.interface icon-theme Papirus
+
+# install wicd icon theme
+sudo cp -r ~/Run/gtk3/wicd-pale/ /usr/share/wicd/icons/
+
+# install rxvt-unicode (deprecated)
+#sudo apt install -y rxvt-unicode
+#cp ~/Run/.Xresources ~/.Xresources
+
+# install termite
+cd
+sudo apt install -y g++ libgtk-3-dev gtk-doc-tools gnutls-bin valac intltool libpcre2-dev libglib3.0-cil-dev libgnutls28-dev libgirepository1.0-dev libxml2-utils gperf build-essential
+wget https://github.com/thestinger/vte-ng/archive/0.50.2.a.zip
+unzip 0.50.2.a.zip
+git clone --branch v13 --recursive https://github.com/thestinger/termite
+echo export LIBRARY_PATH="/usr/include/gtk-3.0:$LIBRARY_PATH"
+cd vte-ng-0.50.2.a/ && ./autogen.sh && make && sudo make install 
+cd
+cd termite && make && sudo make install
+sudo ldconfig
+sudo mkdir -p /lib/terminfo/x
+sudo ln -s /usr/local/share/terminfo/x/xterm-termite /lib/terminfo/x/xterm-termite
+rm -rf ~/vte-ng-0.50.2.a/ ~/termite/
+mkdir -p ~/.config/termite/
+cp ~/Run/termite/config ~/.config/termite/config
+cd
+
+# install dunst
+#sudo apt install -y dunst
+#mkdir -p ~/.config/dunst/
+#cp ~/Run/dunst/dunstrc ~/.config/dunst/
+
+# install zip tools
+sudo apt install -y zip unzip
+
+#install helpful (not optional) tools
+sudo apt install rofi
+sudo apt install -y zip unzip
+sudo apt install -y libnotify4 libnotify-bin
+sudo apt install -y redshift
+sudo apt install -y udisks2 udiskie
+#sudo apt install -y clipit
+#sudo apt install -y xclip
+
+# conky
+sudo apt install -y conky
+cp ~/Run/.conkyrc ~
+
+#install other programs
+#sudo apt install -y gimp libreoffice
+#cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+
+# install gtk-greeter
+sudo apt remove --purge -y unity-greeter
+sudo apt install -y lightdm-gtk-greeter
+sudo cp ~/Run/lightdm-gtk-greeter.conf /etc/lightdm
+
+#done
+echo "Done. Rebooting now"
+sleep 2
+exec sudo reboot
