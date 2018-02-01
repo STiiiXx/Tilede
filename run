@@ -114,7 +114,7 @@ cd termite && make && sudo make install
 sudo ldconfig
 sudo mkdir -p /lib/terminfo/x
 sudo ln -s /usr/local/share/terminfo/x/xterm-termite /lib/terminfo/x/xterm-termite
-rm -rf ~/vte-ng-0.50.2.a/ ~/termite/ 0.50.2.a.zip
+rm -rf ~/vte-ng-0.50.2.a/ ~/termite/ ~/0.50.2.a.zip
 mkdir -p ~/.config/termite/
 cp ~/Run/termite/config ~/.config/termite/config
 cd
@@ -146,7 +146,7 @@ sudo apt install -y python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2
 #sudo apt install -y ranger
 
 # nautilus (file manager gui)
-sudo apt install -y nautilus
+#sudo apt install -y nautilus
 
 # firefox
 sudo apt install -y firefox
@@ -212,7 +212,7 @@ cd
 # create dirs
 mkdir -p ~/Bilder/Screenshots/
 mkdir -p ~/Bilder/Backgrounds/
-cp ~/Tilede/picrures/bg.jpg ~/Bilder/Backgrounds/
+cp ~/Tilede/pictures/bg.jpg ~/Bilder/Backgrounds/
 mkdir -p ~/Dokumente/Studium/
 mkdir -p ~/Dokumente/Arbeit/
 mkdir -p ~/Dokumente/Scans/
@@ -237,7 +237,7 @@ gsettings set org.gnome.desktop.wm.preferences theme Arc-Dark
 gsettings set org.gnome.desktop.interface icon-theme Papirus
 
 # install wicd icon theme
-sudo cp -r ~/Tilede/gtk/gtk3/wicd-pale/ /usr/share/wicd/icons/
+#sudo cp -r ~/Tilede/gtk/gtk3/wicd-pale/ /usr/share/wicd/icons/
 
 # install gtk-greeter
 sudo apt remove --purge -y unity-greeter
