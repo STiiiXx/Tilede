@@ -1,0 +1,61 @@
+backend = "glx";
+
+# inactive-dim = 0.2;
+inactive-opacity = 0.8;
+active-opacity = 1;
+
+# Try to detect WM windows and mark them as active.
+mark-wmwin-focused = true;
+
+# Mark override-redirect windows that doesn’t have a child window with WM_STATE focused.
+mark-ovredir-focused = false;
+
+detect-client-opacity = true;
+
+# fixes window-focus bug
+use-ewmh-active-win = true;
+
+focus-exclude = ["n:a:Conky"];
+
+# Enabled client-side shadows on windows.
+shadow = true;
+# Don't draw shadows on DND windows.
+no-dnd-shadow = true;
+# Avoid drawing shadows on dock/panel windows.
+no-dock-shadow = false;
+# Zero the part of the shadow's mask behind the window. Fix some weirdness with ARGB windows.
+clear-shadow = true;
+# The blur radius for shadows. (default 12)
+shadow-radius = 3;
+# The left offset for shadows. (default -15)
+shadow-offset-x = -5;
+# The top offset for shadows. (default -15)
+shadow-offset-y = 0;
+# The translucency for shadows. (default .75)
+shadow-opacity = 0.3;
+
+shadow-exclude = [
+    "! name~=''",
+    "name = 'Polybar tray window'",
+    "name = 'rofi'",
+    "override_redirect = 1 && !WM_CLASS@:s"
+];
+
+#opacity-rule = [
+#  "0:_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
+#];
+
+wintypes:
+{
+    dock =
+    {
+        # fade: Fade the particular type of windows.
+        fade = false;
+        # shadow: Give those windows shadow
+        shadow = true;
+        # opacity: Default opacity for the type of windows.
+        opacity = 1;
+        # focus: Whether to always consider windows of this type focused.
+        focus = true;
+    };
+};

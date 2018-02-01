@@ -1,0 +1,257 @@
+##########################################################################
+#									 #
+#			     HIGH CONFIG FILE                            #
+#									 #
+##########################################################################
+
+#set background image
+exec_always --no-startup-id feh -F --bg-scale ~/Bilder/Backgrounds/bg.jpg
+
+#execute polybar
+exec_always --no-startup-id ~/.config/polybar/polybar.sh
+
+#set mod key to WINDOWS-key
+set $mod Mod4
+
+#gaps
+gaps outer 0
+gaps inner 5
+smart_gaps on
+
+#popups during fullscreen mode
+popup_during_fullscreen smart
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:SFNS Display 8
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+
+# Before i3 v4.8, we used to recommend this one as the default:
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec termite
+
+# kill focused window
+bindsym $mod+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec ~/.config/i3/rofi
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+#change focus with arrow keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window with keys:
+bindsym $mod+Shift+Left move left 70
+bindsym $mod+Shift+Down move down 70
+bindsym $mod+Shift+Up move up 70
+bindsym $mod+Shift+Right move right 70
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym Mod1+Tab focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# cycle through workspaces
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
+#variables
+set $w1 1 
+set $w2 2 
+set $w3 3 
+set $w4 4 
+set $w5 5 
+set $w6 6 
+set $w7 7 
+set $w8 8 
+set $w9 9 
+set $w10 10 
+
+#assignments, find out class with "xprop"
+assign [class="Firefox"] $w2
+assign [class="Spotify"] $w4
+assign [class="libreoffice"] $w9
+assign [class="Xsane"] $w8
+assign [class="Gimp"] $w10
+
+# switch to workspace
+bindsym F1 workspace $w1
+bindsym F2 workspace $w2
+bindsym F3 workspace $w3
+bindsym F4 workspace $w4
+bindsym F5 workspace $w5
+bindsym F6 workspace $w6
+bindsym F7 workspace $w7
+bindsym F8 workspace $w8
+bindsym F9 workspace $w9
+bindsym F10 workspace $w10
+
+# move focused container to workspace
+bindsym Shift+F1 move container to workspace $w1
+bindsym Shift+F2 move container to workspace $w2
+bindsym Shift+F3 move container to workspace $w3
+bindsym Shift+F4 move container to workspace $w4
+bindsym Shift+F5 move container to workspace $w5
+bindsym Shift+F6 move container to workspace $w6
+bindsym Shift+F7 move container to workspace $w7
+bindsym Shift+F8 move container to workspace $w8
+bindsym Shift+F9 move container to workspace $w9
+bindsym Shift+F10 move container to workspace $w10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# run script that updates os and restarts i3
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Ctrl+e exec "i3-nagbar -t warning -m 'Abmelden?' -b 'Ja' 'i3-msg exit'"
+
+#reboot system
+bindsym $mod+Ctrl+r exec gksu reboot
+
+#shutdown system
+bindsym $mod+Ctrl+s exec gksu shutdown now
+
+#execute command of workspace
+bindsym F11 exec ~/.config/i3/run_app.py
+
+#take screenshot
+bindsym --release Print exec ~/.config/i3/screenshot
+
+#scan document
+bindsym Shift+Print exec hp-scan -m color -o ~/Dokumente/Scans/$(date +%s).png
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+	font pango:Inconsolata 10    
+	#status_command ~/.config/i3/bumblebee/bumblebee-status -m spotify battery pulseaudio nic github datetime -p disk.path=/home datetime.format="%a %d %b %y %I:%M %p" -t solarized-powerline
+	#status_command i3status
+	#status_command "polybar example"
+	#i3bar_command i3bar -t
+	i3bar_command "polybar example"
+	position bottom
+
+	colors {
+                #background #00000055
+                #separator #757575
+                #                       border        background      text
+                focused_workspace       #5598e5       #424653         #ffffff
+                inactive_workspace      #2f343f       #2f343f         #bfbfbf
+                urgent_workspace        #bd2c40       #bd2c40         #bfbfbf
+        }
+}
+
+#start wifi manager (wicd)
+exec --no-startup-id wicd-client --tray
+
+#execute redshift daemon
+exec_always --no-startup-id redshift -l 90:90&
+
+#execute terminal
+exec --no-startup-id termite
+
+#start dropbox daemon (64bit)
+exec ~/.dropbox-dist/dropboxd
+
+#start hp service tray
+exec hp-systray
+
+#window settings
+#new_window pixel 5
+for_window [class="^.*"] border pixel 2
+
+#hide edge borders
+hide_edge_borders both
+
+#border background font-color
+client.focused #5598e5 #424653 #ffffff #5598e5 #424653
+client.unfocused #2f343f #2f343f #bfbfbf #00ff00 #2f343f
+#client.focused_inactive # # # # # 
+
+
+# urgent window timeout
+force_display_urgency_hint 2000 ms
+
+# compositor
+exec_always pkill compton
+exec_always --no-startup-id compton --config ~/.config/i3/compton
+
+# edit this file
+bindsym F12 exec termite -e "nano ~/.config/i3/config"
+
+# edit bar
+bindsym Shift+F12 exec termite -e "sudo nano /home/avocm/.config/polybar/config"
+
+# lock command
+bindsym $mod+Shift+x exec ~/.config/i3/lock
+
+# usb
+exec udiskie -aT&
+
+# change to low battery mode
+bindsym $mod+Shift+Ctrl+i exec ~/.config/i3/high_to_low.sh
