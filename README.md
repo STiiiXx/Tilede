@@ -32,7 +32,7 @@ Feel free to ask for help!
 I would be very happy to have any kind of contribution or advise!
 
 # Issues
-If you find an bug/issue or have a feature request, please look first under the 'Issues' tab in GitHub (https://github.com/stiiixx/tilede).
+If you find an bug/issue or have a feature request, please look first under the 'Issues' tab in GitHub (https://github.com/stiiixx/tilede/issues).
 
 # Future goals  
  - add music player (e.g. mpd)
