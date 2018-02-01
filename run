@@ -195,9 +195,8 @@ cd
 sudo cp ~/Tilede/pictures/unknown_badge.png /usr/share/unity-greeter/
 
 # if zsh is installed: install oh-my-zsh
-#sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-#copy .zshrc file
-#cp ~/Tilede/.zshrc ~
+sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+cp ~/Tilede/zsh/.zshrc ~
 
 # set git password cache (store password for 1h)
 git config --global credential.helper cache
