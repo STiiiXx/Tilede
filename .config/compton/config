@@ -38,12 +38,14 @@ shadow-exclude = [
     "! name~=''",
     "name = 'Polybar tray window'",
     "name = 'rofi'",
+    "class_g = 'Firefox Developer' && argb",
     "override_redirect = 1 && !WM_CLASS@:s"
 ];
 
-#opacity-rule = [
-#  "0:_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
-#];
+opacity-rule = [
+  "99:_NET_WM_NAME@:s = 'rofi'"
+  #"0:_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
+];
 
 wintypes:
 {
