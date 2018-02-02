@@ -143,13 +143,13 @@ bindsym Shift+F10 move container to workspace $w10
 bindsym $mod+F1 exec termite
 bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec ranger
-bindsym $mod+F4 Spotify
-bindsym $mod+F5 atom
-bindsym $mod+F6 termite
-bindsym $mod+F7 termite 
-bindsym $mod+F8 termite
-bindsym $mod+F9 libreoffice
-bindsym $mod+F10 gimp
+bindsym $mod+F4 exec Spotify
+bindsym $mod+F5 exec atom
+bindsym $mod+F6 exec evolution
+bindsym $mod+F7 exec termite 
+bindsym $mod+F8 exec termite
+bindsym $mod+F9 exec libreoffice
+bindsym $mod+F10 exec gimp
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
