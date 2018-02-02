@@ -1,0 +1,43 @@
+Feb 02 17:16 : exception: Failed to open /home/avocm/.mpd/state: No such file or directory
+Feb 02 17:16 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 17:16 : update: added /15. Jung, Brutal, Gutaussehend.mp3
+Feb 02 17:16 : update: added /01. Intro.mp3
+Feb 02 17:16 : avahi: Service 'Music Player' successfully established.
+Feb 02 17:17 : exception: Failed to open /home/avocm/.mpd/state: No such file or directory
+Feb 02 17:17 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 17:17 : avahi: Service 'Music Player' successfully established.
+Feb 02 17:27 : exception: Failed to open /home/avocm/.mpd/state: No such file or directory
+Feb 02 17:27 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 17:27 : avahi: Service 'Music Player' successfully established.
+Feb 02 17:29 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 17:29 : avahi: Service 'Music Player' successfully established.
+Feb 02 17:33 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 17:33 : avahi: Service 'Music Player' successfully established.
+Feb 02 17:38 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 17:38 : avahi: Service 'Music Player' successfully established.
+Feb 02 17:42 : avahi: Initializing interface
+Feb 02 17:42 : avahi: Client changed to state 2
+Feb 02 17:42 : avahi: Client is RUNNING
+Feb 02 17:42 : avahi: Registering service _mpd._tcp/Music Player
+Feb 02 17:42 : avahi: Service group changed to state 0
+Feb 02 17:42 : avahi: Service group is UNCOMMITED
+Feb 02 17:42 : state_file: Loading state file /home/avocm/.mpd/state
+Feb 02 17:42 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 17:42 : avahi: Service group changed to state 1
+Feb 02 17:42 : avahi: Service group is REGISTERING
+Feb 02 17:42 : avahi: Service group changed to state 2
+Feb 02 17:42 : avahi: Service 'Music Player' successfully established.
+Feb 02 17:45 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 17:45 : avahi: Service 'Music Player' successfully established.
+Feb 02 17:45 : state_file: Saving state file /home/avocm/.mpd/state
+Feb 02 17:45 : avahi: Shutting down interface
+Feb 02 17:45 : listen: listen_global_finish called
+Feb 02 17:46 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 17:46 : avahi: Service 'Music Player' successfully established.
+Feb 02 17:46 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 17:46 : avahi: Service 'Music Player' successfully established.
+Feb 02 17:47 : client: [0] opened from local
+Feb 02 17:47 : exception: Failed to read mixer for 'default detected output': no such mixer control: PCM
+Feb 02 17:47 : exception: Failed to open mixer for 'default detected output': no such mixer control: PCM
+Feb 02 17:47 : client: [0] closed
+Feb 02 17:47 : player: played "01. Intro.mp3"
