@@ -41,3 +41,21 @@ Feb 02 17:47 : exception: Failed to read mixer for 'default detected output': no
 Feb 02 17:47 : exception: Failed to open mixer for 'default detected output': no such mixer control: PCM
 Feb 02 17:47 : client: [0] closed
 Feb 02 17:47 : player: played "01. Intro.mp3"
+Feb 02 17:53 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 17:53 : exception: Failed to open mixer for 'default detected output': no such mixer control: PCM
+Feb 02 17:53 : avahi: Service 'Music Player' successfully established.
+Feb 02 17:53 : client: [0] opened from local
+Feb 02 17:53 : exception: Failed to open mixer for 'default detected output': no such mixer control: PCM
+Feb 02 17:53 : client: [0] closed
+Feb 02 17:56 : client: [1] opened from local
+Feb 02 17:56 : client: [1] closed
+Feb 02 18:11 : player: played "15. Jung, Brutal, Gutaussehend.mp3"
+Feb 02 18:11 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 18:11 : avahi: Service 'Music Player' successfully established.
+Feb 02 18:11 : client: [0] opened from local
+Feb 02 18:11 : exception: Failed to read mixer for 'default detected output': no such mixer control: PCM
+Feb 02 18:11 : client: [0] closed
+Feb 02 18:11 : client: [1] opened from local
+Feb 02 18:11 : exception: Failed to open mixer for 'default detected output': no such mixer control: PCM
+Feb 02 18:12 : client: [1] closed
+Feb 02 18:12 : player: played "15. Jung, Brutal, Gutaussehend.mp3"
