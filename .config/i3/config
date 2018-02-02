@@ -270,3 +270,6 @@ exec udiskie -aT&
 
 # change to low battery mode
 bindsym $mod+Shift+Ctrl+i exec ~/.config/i3/high_to_low.sh
+
+# start mpd daemon
+exec mpd
