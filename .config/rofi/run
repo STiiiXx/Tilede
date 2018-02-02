@@ -1,4 +1,4 @@
 #!/bin/bash
 
-#run rofi program launcher
-rofi -show run -location 3 -yoffset 20 -width 20 -lines 5 -font "Monospace 9" -bw 0 -columns 1 -disable-history -hide-scrollbar -color-window "#2f343f, #2f343f, #2f343f" -color-normal "#cecece, #3a3a3a, #adadad, #5598e5, #ffffff"
+# run rofi program launcher
+rofi -show run -show-icons true -location 3 -yoffset 20 -width 20 -lines 5 -font "Monospace 9" -bw 0 -columns 1 -disable-history -hide-scrollbar -color-window "#2f343f, #2f343f, #2f343f" -color-normal "#cecece, #3a3a3a, #adadad, #506070, #ffffff"
