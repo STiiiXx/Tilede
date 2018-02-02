@@ -4,10 +4,10 @@
 #									 #
 ##########################################################################
 
-#set background image
+# set background image
 exec_always --no-startup-id feh -F --bg-scale ~/Bilder/Backgrounds/bg.jpg
 
-#execute polybar
+# execute polybar
 exec_always --no-startup-id ~/.config/polybar/polybar.sh
 
 # execute conky
@@ -16,16 +16,19 @@ exec --no-startup-id conky --config ~/.config/conky/config
 # execute clipit
 exec --no-startup-id clipit
 
-#set mod key to WINDOWS-key
+# set mod key to WINDOWS-key
 set $mod Mod4
 
-#gaps
+# gaps
 gaps outer 0
 gaps inner 5
 smart_gaps on
 
-#popups during fullscreen mode
+# popups during fullscreen mode
 popup_during_fullscreen smart
+
+# sticky windows
+bindsym Ctrl+F12 sticky toggle
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
