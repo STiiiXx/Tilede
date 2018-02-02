@@ -59,3 +59,75 @@ Feb 02 18:11 : client: [1] opened from local
 Feb 02 18:11 : exception: Failed to open mixer for 'default detected output': no such mixer control: PCM
 Feb 02 18:12 : client: [1] closed
 Feb 02 18:12 : player: played "15. Jung, Brutal, Gutaussehend.mp3"
+Feb 02 18:57 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 18:57 : exception: Failed to open mixer for 'default detected output': no such mixer control: PCM
+Feb 02 18:57 : avahi: Service 'Music Player' successfully established.
+Feb 02 18:59 : client: [0] opened from local
+Feb 02 18:59 : client: [0] closed
+Feb 02 18:59 : exception: "default detected output" [alsa] failed to play: snd_pcm_writei() failed: Broken pipe
+Feb 02 18:59 : exception: Failed to open audio output
+Feb 02 19:00 : client: [1] opened from local
+Feb 02 19:00 : client: [1] closed
+Feb 02 19:00 : avahi: Client Disconnected, will reconnect shortly
+Feb 02 19:00 : player: played "15. Jung, Brutal, Gutaussehend.mp3"
+Feb 02 19:01 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 19:01 : avahi: Service 'Music Player' successfully established.
+Feb 02 19:02 : client: [0] opened from local
+Feb 02 19:02 : exception: Failed to read mixer for 'default detected output': no such mixer control: PCM
+Feb 02 19:02 : exception: Failed to open mixer for 'default detected output': no such mixer control: PCM
+Feb 02 19:02 : client: [0] closed
+Feb 02 19:02 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 19:02 : exception: Failed to open mixer for 'default detected output': no such mixer control: PCM
+Feb 02 19:02 : avahi: Service 'Music Player' successfully established.
+Feb 02 19:03 : client: [0] opened from local
+Feb 02 19:03 : client: [0] closed
+Feb 02 19:03 : player: played "15. Jung, Brutal, Gutaussehend.mp3"
+Feb 02 19:03 : player: played "15. Jung, Brutal, Gutaussehend.mp3"
+Feb 02 19:09 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 19:09 : avahi: Service 'Music Player' successfully established.
+Feb 02 19:09 : client: [0] opened from local
+Feb 02 19:09 : exception: Failed to read mixer for 'default detected output': no such mixer control: PCM
+Feb 02 19:09 : client: [0] closed
+Feb 02 19:11 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 19:11 : avahi: Service 'Music Player' successfully established.
+Feb 02 19:11 : client: [0] opened from local
+Feb 02 19:11 : exception: Failed to read mixer for 'default detected output': no such mixer control: PCM
+Feb 02 19:11 : exception: Failed to open mixer for 'default detected output': no such mixer control: PCM
+Feb 02 19:11 : client: [0] closed
+Feb 02 19:11 : player: played "15. Jung, Brutal, Gutaussehend.mp3"
+Feb 02 19:11 : player: played "01. Intro.mp3"
+Feb 02 19:12 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 19:12 : exception: Failed to open mixer for 'default detected output': no such mixer control: PCM
+Feb 02 19:12 : avahi: Service 'Music Player' successfully established.
+Feb 02 19:12 : player: played "01. Intro.mp3"
+Feb 02 19:12 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 19:12 : exception: Failed to open mixer for 'default detected output': no such mixer control: PCM
+Feb 02 19:12 : avahi: Service 'Music Player' successfully established.
+Feb 02 19:12 : client: [0] opened from local
+Feb 02 19:12 : client: [0] closed
+Feb 02 19:12 : player: played "01. Intro.mp3"
+Feb 02 19:15 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 19:15 : exception: Failed to open mixer for 'default detected output': no such mixer control: PCM
+Feb 02 19:15 : avahi: Service 'Music Player' successfully established.
+Feb 02 19:15 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 19:15 : exception: Failed to open mixer for 'default detected output': no such mixer control: PCM
+Feb 02 19:15 : avahi: Service 'Music Player' successfully established.
+Feb 02 19:15 : player: played "01. Intro.mp3"
+Feb 02 19:15 : player: played "01. Intro.mp3"
+Feb 02 19:15 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 19:15 : exception: Failed to open mixer for 'default detected output': no such mixer control: PCM
+Feb 02 19:15 : avahi: Service 'Music Player' successfully established.
+Feb 02 19:15 : player: played "01. Intro.mp3"
+Feb 02 19:15 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 19:15 : exception: Failed to open mixer for 'default detected output': no such mixer control: PCM
+Feb 02 19:15 : avahi: Service 'Music Player' successfully established.
+Feb 02 19:16 : player: played "01. Intro.mp3"
+Feb 02 19:16 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 19:16 : avahi: Service 'Music Player' successfully established.
+Feb 02 19:16 : client: [0] opened from local
+Feb 02 19:16 : exception: Failed to read mixer for 'default detected output': no such mixer control: PCM
+Feb 02 19:16 : exception: Failed to open mixer for 'default detected output': no such mixer control: PCM
+Feb 02 19:16 : client: [0] closed
+Feb 02 19:17 : player: played "15. Jung, Brutal, Gutaussehend.mp3"
+Feb 02 19:17 : exception: OutputThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Feb 02 19:17 : avahi: Service 'Music Player' successfully established.
