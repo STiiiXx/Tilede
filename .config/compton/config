@@ -15,7 +15,11 @@ detect-client-opacity = true;
 # fixes window-focus bug
 use-ewmh-active-win = true;
 
-focus-exclude = ["n:a:Conky"];
+# windows that have always focus
+focus-exclude = [
+	"n:a:Conky",
+	"n:a:rofi"
+];
 
 # Enabled client-side shadows on windows.
 shadow = true;
@@ -43,7 +47,7 @@ shadow-exclude = [
 ];
 
 opacity-rule = [
-  "99:_NET_WM_NAME@:s = 'rofi'"
+  #"99:_NET_WM_NAME@:s = 'rofi'"
   #"0:_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
 ];
 
