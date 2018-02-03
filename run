@@ -21,7 +21,7 @@ sudo apt install -y xorg i3 i3blocks
 #sudo apt install -y imagemagick
 sudo apt install -y feh
 sudo apt install -y pulseaudio pavucontrol
-sudo apt install -y wicd
+#sudo apt install -y wicd
 sudo apt install -y lightdm
 sudo apt install -y jq
 sudo apt install -y compton
