@@ -151,6 +151,7 @@ sudo make install
 # mpd / ncmpcpp
 sudo apt install -y mpd
 sudo apt install -y ncmpcpp
+echo "Icon=deepin-music" | sudo tee -a /usr/share/applications/ncmpcpp.desktop
 
 # evolution mail client
 sudo apt install -y evolution
