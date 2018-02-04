@@ -151,7 +151,6 @@ sudo make install
 # mpd / ncmpcpp
 sudo apt install -y mpd
 sudo apt install -y ncmpcpp
-echo "Icon=deepin-music" | sudo tee -a /usr/share/applications/ncmpcpp.desktop
 
 # evolution mail client
 sudo apt install -y evolution
@@ -177,8 +176,12 @@ cp ~/Tilede/firefox/userContent.css ~/.mozilla/firefox/*.default/chrome/userCont
 # scrot (commandline image viewer and screenshot-app)
 sudo apt install -y scrot
 
-# atom editor (outdated)
-#sudo apt install -y gvfs-bin
+# atom editor
+cd
+sudo apt install -y gvfs-bin
+wget https://atom.io/download/deb
+sudo dpkg -i deb
+rm deb
 
 # conky
 sudo apt install -y conky
@@ -220,6 +223,10 @@ sudo cp ~/Tilede/pictures/unknown_badge.png /usr/share/unity-greeter/
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 cp ~/Tilede/zsh/.zshrc ~
 
+# if mpd / ncmpcpp is installed
+echo "Icon=deepin-music" | sudo tee -a /usr/share/applications/ncmpcpp.desktop
+mkdir -p ~/.mpd/playlists/
+
 # set git password cache (store password for 1h)
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
@@ -239,6 +246,7 @@ mkdir -p ~/Dokumente/Scans/
 rm -r ~/Podcasts/
 rm -r ~/Audiobooks/
 rm -r ~/Öffentlich/
+rm -r ~/Desktop/
 
 # creating mount folder
 sudo mkdir -p /media/$USER
