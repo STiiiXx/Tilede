@@ -21,5 +21,8 @@ rofi.show: run
 rofi.yoffset: 25
 rofi.lines: 5
 rofi.opacity: 100
-rofi.terminal: "termite"
+rofi.terminal: termite
 rofi.disable-history: true
+rofi.display-drun: Apps
+rofi.display-run: Run
+rofi.display-window: Switch
