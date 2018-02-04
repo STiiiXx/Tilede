@@ -15,8 +15,8 @@ rofi.hide-scrollbar: true
 rofi.drun-icon-theme: Papirus
 rofi.show-icons: true
 rofi.location: 3
-rofi.modi: drun,run,window
-rofi.combi-modi: drun,run
+rofi.modi: drun,run,ssh
+;rofi.combi-modi: drun,run
 rofi.show: run
 rofi.yoffset: 25
 rofi.lines: 5
@@ -25,4 +25,4 @@ rofi.terminal: termite
 rofi.disable-history: true
 rofi.display-drun: Apps
 rofi.display-run: Run
-rofi.display-window: Switch
+rofi.display-ssh: SSH
