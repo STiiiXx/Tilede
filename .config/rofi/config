@@ -12,7 +12,7 @@ rofi.eh: 1
 rofi.sidebar-mode: true
 rofi.separator-style: none
 rofi.hide-scrollbar: true
-rofi.drun-icon-theme: "Papirus"
+rofi.drun-icon-theme: Papirus
 rofi.show-icons: true
 rofi.location: 3
 rofi.modi: drun,run,window
