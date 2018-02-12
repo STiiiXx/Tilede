@@ -20,6 +20,23 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
+black = #3f3f3f
+chocolate-brown = #705050
+light-grass-green = #60b48a
+light-orange = #dfaf8f
+dark-blue = #506070
+light-pink = #dc8cc3
+cyan = #94c9cc
+light-yellow = #dcdccc
+green = #709080
+blood-orange = #d88686
+yellow = #c3bf9f
+other-yellow = #f0dfaf
+baby-blue = #94bff3
+rosa = #ec93d3
+chalk-green = #93e0e3
+white = #bfbfbf
+
 [bar/top]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
@@ -387,7 +404,7 @@ format-muted-foreground = #dfaf9f
 
 [module/battery]
 type = internal/battery
-battery = BAT0
+battery = BAT1
 adapter = ADP0
 full-at = 100
 
@@ -400,7 +417,7 @@ format-charging-underline =
 
 ;discharging labels
 label-discharging = %percentage%%(%time%)
-label-discharging-foreground = #4cda64
+label-discharging-foreground = ${colors.light-grass-green}
 format-discharging = <ramp-capacity><label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
@@ -449,21 +466,21 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format = <ramp> <label>
+format = <ramp><label>
 format-underline = #00000000
-format-warn = <ramp> <label-warn>
+format-warn = <ramp><label-warn>
 format-warn-underline = 0
 
 label = %temperature%
 label-warn = %temperature%
-label-warn-foreground = ${colors.secondary}
+label-warn-foreground = ${colors.blood-orange}
 
 ramp-0 = 
-ramp-0-foreground = #00ff00
+ramp-0-foreground = ${colors.green}
 ramp-1 = 
-ramp-1-foreground = #ffff00
+ramp-1-foreground = ${colors.yellow}
 ramp-2 = 
-ramp-2-foreground = #ff0000
+ramp-2-foreground = ${colors.blood-orange}
 
 [module/usb]
 type = custom/script
