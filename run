@@ -1,4 +1,4 @@
-#!/bin/bash
+##!/bin/bash
 
 echo "Installing Tilede"
 
@@ -142,6 +142,9 @@ sudo make install
 #############################
 # install optional packages #
 #############################
+
+# document / pdf reader
+#sudo apt install -y evince
 
 # bluetooth support
 sudo apt install -y blueman pulseaudio-module-bluetooth
