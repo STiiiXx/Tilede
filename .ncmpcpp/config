@@ -22,7 +22,7 @@ lyrics_directory = ~/.lyrics
 #
 ##### connection settings #####
 #
-mpd_host = /home/avocm/.mpd/mpd.socket
+mpd_host = /home/robin/.mpd/mpd.socket
 #
 mpd_port = 6600
 #
@@ -225,7 +225,6 @@ mpd_music_dir = ~/Musik
 #
 browser_sort_mode = noop
 #
-# sort titles by track numer
 browser_sort_format = {%n}
 #browser_sort_format = {%a - }{%t}|{%f} {(%l)}
 #
@@ -272,8 +271,7 @@ browser_sort_format = {%n}
 ## Note: Custom command that will be executed each time song changes. Useful for
 ## notifications etc.
 ##
-#execute_on_song_change = ""
-#
+execute_on_song_change = notify-send "$(ncmpcpp --current-song)"
 ##
 ## Note: Custom command that will be executed each time player state
 ## changes. The environment variable MPD_PLAYER_STATE is set to the current
@@ -319,7 +317,7 @@ browser_sort_format = {%n}
 ## Note: You can specify third character which will be used to build 'empty'
 ## part of progressbar.
 ##
-#progressbar_look = =>
+progressbar_look = ─╼
 #
 ## Available values: database, playlist.
 ##
@@ -395,7 +393,7 @@ browser_sort_format = {%n}
 ##
 ## Note: You can define startup screen by choosing screen from the list above.
 ##
-#startup_screen = playlist
+#startup_screen = help
 #
 ##
 ## Note: You can define startup slave screen by choosing screen from the list
@@ -530,9 +528,9 @@ browser_sort_format = {%n}
 #
 #progressbar_color = black:b
 #
-#progressbar_elapsed_color = green:b
+progressbar_elapsed_color = red
 #
-#statusbar_color = default
+statusbar_color = yellow
 #
 #statusbar_time_color = default:b
 #
