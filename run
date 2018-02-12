@@ -152,7 +152,7 @@ sudo apt install -y blueman pulseaudio-module-bluetooth
 #sudo apt-get install -y spotify-client
 
 # mpd / ncmpcpp
-sudo apt install -y mpd
+sudo apt install -y mpd mpc
 sudo apt install -y ncmpcpp
 
 # evolution mail client
