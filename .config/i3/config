@@ -270,3 +270,7 @@ bindsym $mod+Shift+Ctrl+i exec ~/.config/i3/high_to_low.sh
 
 # start mpd daemon
 exec mpd
+
+# start bluetooth audio support
+exec pactl load-module module-bluetooth-discover
+exec blueman-applet
