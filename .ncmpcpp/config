@@ -223,8 +223,10 @@ mpd_music_dir = ~/Musik
 ## browser_sort_mode are "name", "mtime", "format" and "noop".
 ##
 #
-#browser_sort_mode = name
+browser_sort_mode = noop
 #
+# sort titles by track numer
+browser_sort_format = {%n}
 #browser_sort_format = {%a - }{%t}|{%f} {(%l)}
 #
 ##### columns settings #####
