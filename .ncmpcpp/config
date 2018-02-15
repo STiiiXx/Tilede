@@ -271,7 +271,7 @@ browser_sort_format = {%n}
 ## Note: Custom command that will be executed each time song changes. Useful for
 ## notifications etc.
 ##
-execute_on_song_change = notify-send -u low "$(mpc --host=/home/$USER/.mpd/mpd.socket current -f %artist%)" "$(mpc --host=/home/$USER/.mpd/mpd.socket current -f '%album% - %title%')"
+execute_on_song_change = notify-send -u low "$(mpc --host=/home/$USER/.mpd/mpd.socket current -f %title%)" "$(mpc --host=/home/$USER/.mpd/mpd.socket current -f '%artist% - %album%')"
 ##
 ## Note: Custom command that will be executed each time player state
 ## changes. The environment variable MPD_PLAYER_STATE is set to the current
