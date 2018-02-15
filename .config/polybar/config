@@ -1,4 +1,4 @@
-;=====================================================
+;=================================<<><<<<<====================
 ;
 ;   To learn more about how to configure Polybar
 ;   go to https://github.com/jaagr/polybar
@@ -21,7 +21,7 @@ secondary = #e60053
 alert = #bd2c40
 
 black = #3f3f3f
-chocolate-brown = #705050
+chocolate-brown = #836953
 light-grass-green = #60b48a
 light-orange = #dfaf8f
 dark-blue = #506070
@@ -36,6 +36,7 @@ baby-blue = #94bff3
 rosa = #ec93d3
 chalk-green = #93e0e3
 white = #bfbfbf
+magenta = #ff80ff
 
 [bar/top]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -66,7 +67,7 @@ font-0 = SFNS Display Icon:pixelsize=9;1
 
 modules-left = i3
 modules-center = spotify
-modules-right = wlan eth xkeyboard volume filesystem xbacklight redshift battery date
+modules-right = wlan xbacklight eth xkeyboard volume filesystem battery date
 
 tray-position = right
 tray-padding = 0
@@ -294,19 +295,16 @@ label-song-ellipsis = true
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label> <bar>
-label = BL
+format = <ramp><label>
+label = %percentage%%
+label-foreground = ${colors.chocolate-brown}
 
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #ff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-foreground = ${colors.chocolate-brown}
 
 [module/backlight-acpi]
 inherit = module/xbacklight
@@ -317,10 +315,10 @@ card = intel_backlight
 type = internal/cpu
 interval = 2
 format-prefix = 
-format-prefix-foreground = #dc8cc3
+format-prefix-foreground = ${colors.light-pink}
 format-underline = #00000000
 label = %percentage:2%%
-label-foreground = #dc8cc3
+label-foreground = ${colors.light-pink}
 
 [module/memory]
 type = internal/memory
@@ -339,7 +337,7 @@ interval = 3.0
 format-connected = <ramp-signal><label-connected>
 ;format-connected-underline = 
 label-connected = %essid%
-label-connected-foreground = #f24df2
+label-connected-foreground = ${colors.magenta}
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -352,7 +350,7 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = #f24df2
+ramp-signal-foreground = ${colors.magenta}
 
 enable-click = true
 click-left = exec xterm
@@ -472,6 +470,7 @@ format-warn = <ramp><label-warn>
 format-warn-underline = 0
 
 label = %temperature%
+label-foreground = ${colors.yellow}
 label-warn = %temperature%
 label-warn-foreground = ${colors.blood-orange}
 
