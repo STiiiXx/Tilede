@@ -37,6 +37,16 @@ sudo apt install -y gksu
 sudo apt install -y cups
 sudo apt install -y xbacklight
 
+# install dunst
+cd
+git clone --branch v1.3.1 https://github.com/dunst-project/dunst/
+cd dunst
+sudo apt install -y libxdg-basedir-dev libxinerama-dev libxss-dev librsvg2-dev
+make 
+sudo make install
+cd
+rm -rf dunst
+
 # install backlight support
 sudo touch /etc/X11/xorg.conf
 sudo echo 'Section "Device"
