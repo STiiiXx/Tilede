@@ -25,7 +25,6 @@ sudo apt install -y pulseaudio pavucontrol
 sudo apt install -y lightdm
 sudo apt install -y jq
 sudo apt install -y compton
-#sudo apt install -y dunst
 #sudo apt install -y rofi (deprecated)
 sudo apt install -y zip unzip
 sudo apt install -y libnotify4 libnotify-bin
