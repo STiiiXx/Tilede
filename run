@@ -161,6 +161,14 @@ sudo make install
 # install optional packages #
 #############################
 
+# install hplip
+cd
+wget https://downloads.sourceforge.net/project/hplip/hplip/3.17.11/hplip-3.17.11.run?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fhplip%2Ffiles%2Fhplip%2F3.17.11%2Fhplip-3.17.11.run%2Fdownload%3Fuse_mirror%3Dnchc&ts=1518793450 -O hplip.run
+chmod +x hplip.run
+./hplip.run
+cd hplip-3.17.11/
+./configure --with-hpppddir=/usr/share/ppd/HP --libdir=/usr/lib --prefix=/usr --enable-qt4 --disable-qt5 --enable-doc-build --disable-cups-ppd-install --disable-foomatic-drv-install --disable-libusb01_build --disable-foomatic-ppd-install --disable-hpijs-install --disable-class-driver --disable-udev_sysfs_rules --disable-policykit --enable-cups-drv-install --enable-hpcups-install --disable-network-build --enable-dbus-build --enable-scan-build --enable-fax-build --enable-apparmor_build
+
 # install MS-fonts (Arial, Courier, Comic Sans, ...)
 sudo apt-get install -y ttf-mscorefonts-installer
 
