@@ -5,7 +5,7 @@ rofi.color-active: argb:00373B47, #65acff, argb:e44b5160, argb:00373B47, #f9f9f9
 rofi.color-window: #2f343f, #2f343f,  #0000ff
 rofi.width: 15
 rofi.lines: 16
-rofi.font: Open Sans Light 11
+rofi.font: DejaVuSansMono Nerd Font 11
 rofi.bw: 2
 rofi.padding: 15
 rofi.eh: 1

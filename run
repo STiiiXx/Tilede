@@ -1,4 +1,4 @@
-##!/bin/bash
+#!/bin/bash
 
 echo "Installing Tilede"
 
@@ -17,15 +17,14 @@ git clone https://github.com/STiiiXx/Tilede
 
 sudo apt update --upgrade
 sudo apt install -y build-essential make
-sudo apt install -y xorg i3 i3blocks
-#sudo apt install -y imagemagick
+sudo apt install -y xorg i3 i3blocks xdg-utils
+#sudo apt install -y imagemagick 
 sudo apt install -y feh
 sudo apt install -y pulseaudio pavucontrol
 #sudo apt install -y wicd
 sudo apt install -y lightdm
 sudo apt install -y jq
 sudo apt install -y compton
-#sudo apt install -y rofi (deprecated)
 sudo apt install -y zip unzip
 sudo apt install -y libnotify4 libnotify-bin
 sudo apt install -y redshift
@@ -149,6 +148,16 @@ sudo apt install -y python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2
 
 # install rofi
 cd
+# deps
+sudo apt install -y libbison-dev flex libsubunit-dev libsubunit0
+wget https://github.com/libcheck/check/releases/download/0.12.0/check-0.12.0.tar.gz -O check.tar.gz
+tar xf check.tar.xz
+cd check-0.12.0/
+./configure
+make
+sudo make install
+cd
+# install
 wget -c https://github.com/DaveDavenport/rofi/releases/download/1.5.0/rofi-1.5.0.tar.gz
 tar xf rofi-1.5.0.tar.gz
 cd rofi-1.5.0/
@@ -156,6 +165,7 @@ autoreconf -i
 ./configure
 make
 sudo make install
+cd 
 
 #############################
 # install optional packages #
@@ -163,11 +173,14 @@ sudo make install
 
 # install hplip
 cd
-wget https://downloads.sourceforge.net/project/hplip/hplip/3.17.11/hplip-3.17.11.run?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fhplip%2Ffiles%2Fhplip%2F3.17.11%2Fhplip-3.17.11.run%2Fdownload%3Fuse_mirror%3Dnchc&ts=1518793450 -O hplip.run
+wget "https://downloads.sourceforge.net/project/hplip/hplip/3.17.11/hplip-3.17.11.run?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fhplip%2Ffiles%2Fhplip%2F3.17.11%2Fhplip-3.17.11.run%2Fdownload%3Fuse_mirror%3Dnchc&ts=1518793450" -O hplip.run
 chmod +x hplip.run
 ./hplip.run
 cd hplip-3.17.11/
 ./configure --with-hpppddir=/usr/share/ppd/HP --libdir=/usr/lib --prefix=/usr --enable-qt4 --disable-qt5 --enable-doc-build --disable-cups-ppd-install --disable-foomatic-drv-install --disable-libusb01_build --disable-foomatic-ppd-install --disable-hpijs-install --disable-class-driver --disable-udev_sysfs_rules --disable-policykit --enable-cups-drv-install --enable-hpcups-install --disable-network-build --enable-dbus-build --enable-scan-build --enable-fax-build --enable-apparmor_build
+make
+sudo make install
+cd
 
 # install MS-fonts (Arial, Courier, Comic Sans, ...)
 sudo apt-get install -y ttf-mscorefonts-installer
@@ -213,7 +226,7 @@ mkdir -p ~/.mozilla/firefox/*.default/chrome/
 cp ~/Tilede/firefox/userContent.css ~/.mozilla/firefox/*.default/chrome/userContent.css
 
 # zsh
-#sudo apt install -y zsh
+sudo apt install -y zsh
 
 # scrot (commandline image viewer and screenshot-app)
 sudo apt install -y scrot
@@ -259,7 +272,7 @@ sudo echo "[SeatDefaults]" >> 50-myconfig.conf
 sudo echo "user-session=i3" >> 50-myconfig.conf
 cd
 # create i3 badge for lightdm (unneccessary)
-sudo cp ~/Tilede/pictures/unknown_badge.png /usr/share/unity-greeter/
+sudo cp ~/Tilede/gtk/lightdm/unknown_badge.png /usr/share/unity-greeter/
 
 # if zsh is installed: install oh-my-zsh
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
