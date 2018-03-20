@@ -25,7 +25,7 @@ sudo apt install -y pulseaudio pavucontrol
 sudo apt install -y lightdm
 sudo apt install -y jq
 sudo apt install -y compton
-sudo apt install -y zip unzip
+sudo apt install -y zip unzip p7zip
 sudo apt install -y libnotify4 libnotify-bin
 sudo apt install -y redshift
 sudo apt install -y udisks2 udiskie
