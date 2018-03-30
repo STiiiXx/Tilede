@@ -11,8 +11,29 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" git wrapper
+Plugin 'tpope/vim-fugitive' 
+
+" enables comment toggeling
+Plugin 'scrooloose/nerdcommenter'
+inoremap qq <C-O>:call NERDComment("n", "Toggle")<CR>
+
+" pairs and deletes brackets and strings together
+Plugin 'jiangmiao/auto-pairs'
+
+" enables use of youcompleteme and ultisnips together
 Plugin 'ervandew/supertab'
+
+" enables a tree
 Plugin 'scrooloose/nerdtree.git'
+
+" lightweight powerline statusbar
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+let g:airline_theme='tilede'
+let g:airline_powerline_fonts = 1
+
+" code completition
 Plugin 'Valloric/YouCompleteMe.git'
 " youcomplete me configurations
 let g:ycm_global_ycm_extra_conf = '$HOME/.vim/.ycm_extra_conf.py'
