@@ -17,6 +17,7 @@ Plugin 'tpope/vim-fugitive'
 " enables comment toggeling
 Plugin 'scrooloose/nerdcommenter'
 inoremap qq <C-O>:call NERDComment("n", "Toggle")<CR>
+nnoremap qq :call NERDComment("n", "Toggle")<CR>
 
 " pairs and deletes brackets and strings together
 Plugin 'jiangmiao/auto-pairs'
@@ -36,7 +37,7 @@ let g:airline_powerline_fonts = 1
 " code completition
 Plugin 'Valloric/YouCompleteMe.git'
 " youcomplete me configurations
-let g:ycm_global_ycm_extra_conf = '$HOME/.vim/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_key_list_select_completion = ['<C-j>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-j>'
@@ -141,5 +142,5 @@ set shiftwidth=0
 
 """ Keybindings
 " copy to system clipboard
-noremap <Leader>y "+y
+noremap y "+y
 set clipboard=unnamedplus
