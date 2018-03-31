@@ -171,6 +171,9 @@ cd
 # install optional packages #
 #############################
 
+# install neovim (nvim)
+sudo apt install neovim
+
 # install hplip
 cd
 wget "https://downloads.sourceforge.net/project/hplip/hplip/3.17.11/hplip-3.17.11.run?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fhplip%2Ffiles%2Fhplip%2F3.17.11%2Fhplip-3.17.11.run%2Fdownload%3Fuse_mirror%3Dnchc&ts=1518793450" -O hplip.run
