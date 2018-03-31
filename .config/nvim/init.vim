@@ -103,6 +103,9 @@ set linebreak
 " line numbers
 set number
 
+" allow cursor placing behind last character
+set virtualedit=onemore
+
 " puts a straight line under the current edited line
 " set cursorline
 
