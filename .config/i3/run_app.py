@@ -25,7 +25,7 @@ elif x == 4:
 elif x == 5:
     subprocess.run("atom&", shell=True)
 elif x == 6:
-    subprocess.run("&evolution", shell=True)
+    subprocess.run("evolution&", shell=True)
 #elif x == 7:
 #    subprocess.run("&", shell=True)
 #elif x == 8:
