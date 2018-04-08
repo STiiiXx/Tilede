@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Eagle
+Comment=Entwurfssoftware für Leiterplatten
+GenericName=Leiterplatten Designer
+Exec=/usr/bin/eagle %F
+Icon=wine
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;Utility;TextEditor;Development;
+MimeType=text/plain;
