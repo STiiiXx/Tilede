@@ -40,7 +40,7 @@ cd
 git clone --branch v1.3.1 https://github.com/dunst-project/dunst/
 cd dunst
 sudo apt install -y libxdg-basedir-dev libxinerama-dev libxss-dev librsvg2-dev
-make 
+make
 sudo make install
 cd
 rm -rf dunst
@@ -260,6 +260,10 @@ sudo apt install -y conky
 #############################
 # configuration of programs #
 #############################
+
+# setup ssh
+mkdir -p ~/.ssh/
+cp ~/Tilede/ssh/config ~/.ssh/
 
 # install fonts
 sudo cp -r ~/Tilede/fonts/* /usr/share/fonts/
