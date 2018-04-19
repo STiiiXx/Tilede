@@ -2,7 +2,7 @@
 
 echo "Installing Tilede"
 
-#go to home dir
+# go to home dir
 cd
 
 # install git
@@ -18,7 +18,7 @@ git clone https://github.com/STiiiXx/Tilede
 sudo apt update --upgrade
 sudo apt install -y build-essential make
 sudo apt install -y xorg i3 i3blocks xdg-utils
-#sudo apt install -y imagemagick 
+sudo apt install -y imagemagick
 sudo apt install -y feh
 sudo apt install -y pulseaudio pavucontrol
 #sudo apt install -y wicd
@@ -29,8 +29,8 @@ sudo apt install -y zip unzip p7zip
 sudo apt install -y libnotify4 libnotify-bin
 sudo apt install -y redshift
 sudo apt install -y udisks2 udiskie
-#sudo apt install -y clipit
-#sudo apt install -y xclip
+sudo apt install -y clipit
+sudo apt install -y xclip
 sudo apt install -y gksu
 sudo apt install -y cups
 sudo apt install -y xbacklight
@@ -116,7 +116,7 @@ sudo cp -r ~/Tilede/gtk/gtk3/Arc-Dark /usr/share/themes/Arc-Dark/
 sudo cp -r ~/Tilede/gtk/gtk3/OpenZone_White /usr/share/icons/
 sudo cp ~/Tilede/gtk/gtk3/index.theme /usr/share/icons/default/index.theme
 
-# install rxvt-unicode (deprecated)
+# install rxvt-unicode (terminal emulator - not supported natively)
 #sudo apt install -y rxvt-unicode
 
 # install termite (terminal emulator)
@@ -165,11 +165,21 @@ autoreconf -i
 ./configure
 make
 sudo make install
-cd 
+cd
+
+# network manager openvpn
+sudo apt install -y network-manager-openvpn
+sudo apt-get install network-manager-openvpn-gnome
 
 #############################
 # install optional packages #
 #############################
+
+# calculator
+sudo apt install -y gnome-calculator
+
+# install calibre (for ebook readers)
+sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
 
 # install neovim (nvim)
 sudo apt install neovim
@@ -199,7 +209,7 @@ sudo apt-get install aspell-de
 #sudo apt-get install $(check-language-support -l de)
 
 # document / pdf reader
-#sudo apt install -y evince
+sudo apt install -y evince
 
 # bluetooth support
 sudo apt install -y blueman pulseaudio-module-bluetooth
@@ -224,7 +234,7 @@ sudo apt install -y evolution
 #sudo apt install -y ranger
 
 # nautilus (file manager gui)
-#sudo apt install -y nautilus
+sudo apt install -y nautilus
 
 # firefox
 sudo apt install -y firefox

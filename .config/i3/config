@@ -6,6 +6,8 @@
 
 exec_always /cip/run.sh
 
+exec rofi
+
 # set background image
 exec_always --no-startup-id feh -F --bg-scale ~/Bilder/Backgrounds/bg.jpg
 
