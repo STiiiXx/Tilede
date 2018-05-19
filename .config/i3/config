@@ -4,7 +4,7 @@
 #									 #
 ##########################################################################
 
-exec_always /cip/run.sh
+exec_always /cip/run
 
 exec rofi
 
@@ -42,6 +42,9 @@ bindsym XF86AudioNext exec mpc --host=/home/$USER/.mpd/mpd.socket next ; exec db
 gaps outer 0
 gaps inner 5
 smart_gaps on
+
+# bind Caps Lock to nothing
+
 
 # popups during fullscreen mode
 popup_during_fullscreen smart
