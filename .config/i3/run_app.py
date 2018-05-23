@@ -19,11 +19,12 @@ if x == 1:
 elif x == 2:
     subprocess.run("firefox&", shell=True)
 elif x == 3:
-    subprocess.run("termite -e ranger&", shell=True)
+    #subprocess.run("termite -e ranger&", shell=True)
+    subprocess.run("nautilus&", shell=True)
 elif x == 4:
     subprocess.run("spotify&", shell=True)
 elif x == 5:
-    subprocess.run("atom&", shell=True)
+    subprocess.run("~/.netbeans-c++/bin/netbeans&", shell=True)
 elif x == 6:
     subprocess.run("evolution&", shell=True)
 #elif x == 7:
