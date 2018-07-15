@@ -175,6 +175,10 @@ sudo apt-get install network-manager-openvpn-gnome
 # install optional packages #
 #############################
 
+# offline terminal translator
+sudo apt install -y dictd
+sudo apt install -y dict-freedict-eng-deu dict-freedict-deu-eng
+
 # calculator
 sudo apt install -y gnome-calculator
 

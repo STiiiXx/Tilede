@@ -1,8 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+stty -ixon
+
 # Path to your oh-my-zsh installation.
-  export ZSH=$USER/.oh-my-zsh
+  export ZSH=/home/robin/.oh-my-zsh
 
 # bash behavior in wildcards '*'
 setopt nonomatch

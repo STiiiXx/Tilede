@@ -1,3 +1,16 @@
+" set termguicolors
+set guicursor=
+
+" leave insert mode quickly
+"if ! has('gui_running')
+  "set ttimeoutlen=10
+  "augroup FastEscape
+    "autocmd!
+    "au InsertEnter * set timeoutlen=0
+    "au InsertLeave * set timeoutlen=1000
+  "augroup END
+"endif
+
 """ Plugins
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -10,6 +23,23 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
+" Super Searching
+Plugin 'kien/ctrlp.vim'
+
+" Terminal colorscheme
+Plugin 'jnurmine/Zenburn'
+
+" Syntax highlighting
+Plugin 'vim-syntastic/syntastic'
+
+" PEP 8 checking
+Plugin 'nvie/vim-flake8'
+
+" compiling and running code
+Plugin 'vim-scripts/SingleCompile'
+nmap <c-c> :SCCompile<cr>
+nmap <c-r> :SCCompileRun<cr>
 
 " git wrapper
 Plugin 'tpope/vim-fugitive' 
@@ -26,7 +56,9 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'ervandew/supertab'
 
 " enables a tree
-Plugin 'scrooloose/nerdtree.git'
+Plugin 'scrooloose/nerdtree'
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
 
 " lightweight powerline statusbar
 Plugin 'vim-airline/vim-airline'
@@ -81,6 +113,9 @@ set linebreak
 " line numbers
 set number
 
+" allow cursor placing behind last character
+set virtualedit=onemore
+
 " puts a straight line under the current edited line
 " set cursorline
 
@@ -119,6 +154,8 @@ set gdefault
 
 """ Text formatting
 
+let python_highlight_all=1
+
 " syntax highlighting
 syntax on
 " preserve indentation
@@ -144,3 +181,24 @@ set shiftwidth=0
 " copy to system clipboard
 noremap y "+y
 set clipboard=unnamedplus
+
+" Save all the time
+nmap <c-s> :w<CR>
+vmap <c-s> <Esc><c-s>gv
+imap <c-s> <Esc><c-s>
+
+" redo
+map r :redo<CR>
+
+" split navigation
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+
+" theme
+colorscheme zenburn
+hi CursorLineNr term=bold ctermfg=white ctermbg=black
+hi CursorLine   cterm=NONE ctermbg=black ctermfg=NONE
+hi LineNr term=bold ctermbg=black
+set cursorline
