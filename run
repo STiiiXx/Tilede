@@ -46,12 +46,12 @@ cd
 rm -rf dunst
 
 # install backlight support
-sudo touch /etc/X11/xorg.conf
-sudo echo 'Section "Device"
-    Identifier  "0x43"
-    Driver      "intel"
-    Option      "Backlight"  "intel_backlight"
-EndSection' | sudo tee -a /etc/X11/xorg.conf
+#sudo touch /etc/X11/xorg.conf
+#sudo echo 'Section "Device"
+#    Identifier  "0x43"
+#    Driver      "intel"
+#    Option      "Backlight"  "intel_backlight"
+#EndSection' | sudo tee -a /etc/X11/xorg.conf
 
 # install i3-gaps
 sudo apt install -y libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm0 libxcb-xrm-dev automake
@@ -77,12 +77,12 @@ rm -rf i3-gaps
 #rm -rf i3lock-color
 
 # polybar (commented out is the building from source way)
-sudo apt install -y cmake cmake-data libcairo2-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xkb-dev pkg-config python-xcbgen libxcb-xrm-dev i3-wm libasound2-dev libmpdclient-dev libiw-dev libcurl4-openssl-dev libxcb-cursor-dev
+sudo apt install -y cmake cmake-data libcairo2-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xkb-dev pkg-config python-xcbgen libxcb-xrm-dev i3-wm libasound2-dev libmpdclient-dev libiw-dev libcurl4-openssl-dev libxcb-cursor-dev libpulse-dev libjsoncpp-dev xcb-proto
 cd
-echo "deb http://archive.getdeb.net/ubuntu zesty-getdeb apps" | sudo tee -a /etc/apt/sources.list
-wget -q -O- http://archive.getdeb.net/getdeb-archive.key | sudo apt-key add -
-sudo apt update
-sudo apt install -y polybar
+#echo "deb http://archive.getdeb.net/ubuntu zesty-getdeb apps" | sudo tee -a /etc/apt/sources.list
+#wget -q -O- http://archive.getdeb.net/getdeb-archive.key | sudo apt-key add -
+#sudo apt update
+#sudo apt install -y polybar
 #install xcb-proto
 #cd
 #wget https://launchpad.net/ubuntu/+archive/primary/+files/xcb-proto_1.11.orig.tar.gz
@@ -104,6 +104,12 @@ sudo apt install -y polybar
 #cd polybar
 #./build.sh
 #rm -rf ~/polybar/
+git clone --recursive --branch=3.2.1 https://github.com/jaagr/polybar
+cd polybar
+mkdir build
+cd build/
+cmake ..
+sudo make install
 
 # GTK-3.0
 # install gtk-3.0 icon theme (Papirus)
@@ -144,28 +150,29 @@ pip install requests
 pip install psutil
 pip install netifaces
 pip install power
-sudo apt install -y python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2-gtk-3.0 gir1.2-gtksource-3.0
+#sudo apt install -y python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2-gtk-3.0 gir1.2-gtksource-3.0
 
 # install rofi
 cd
 # deps
 sudo apt install -y libbison-dev flex libsubunit-dev libsubunit0
 wget https://github.com/libcheck/check/releases/download/0.12.0/check-0.12.0.tar.gz -O check.tar.gz
-tar xf check.tar.xz
+tar xf check.tar.gz
 cd check-0.12.0/
 ./configure
 make
 sudo make install
 cd
 # install
-wget -c https://github.com/DaveDavenport/rofi/releases/download/1.5.0/rofi-1.5.0.tar.gz
-tar xf rofi-1.5.0.tar.gz
-cd rofi-1.5.0/
+git clone --recursive --branch=1.5.1 https://www.github.com/DaveDavenport/rofi
+cd rofi/
 autoreconf -i
 ./configure
 make
 sudo make install
 cd
+rm check.tar.gz
+rm -r rofi
 
 # network manager openvpn
 sudo apt install -y network-manager-openvpn
@@ -176,8 +183,8 @@ sudo apt-get install network-manager-openvpn-gnome
 #############################
 
 # offline terminal translator
-sudo apt install -y dictd
-sudo apt install -y dict-freedict-eng-deu dict-freedict-deu-eng
+#sudo apt install -y dictd
+#sudo apt install -y dict-freedict-eng-deu dict-freedict-deu-eng
 
 # calculator
 sudo apt install -y gnome-calculator
@@ -186,22 +193,22 @@ sudo apt install -y gnome-calculator
 sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
 
 # install neovim (nvim)
-sudo apt install neovim
-mkdir -p ~/.vim
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-cp ~/Tilede/.vim/.ycm_extra_conf.py ~/.vim
-nvim -c PluginInstall -c qa
+#sudo apt install neovim
+#mkdir -p ~/.vim
+#git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+#cp ~/Tilede/.vim/.ycm_extra_conf.py ~/.vim
+#nvim -c PluginInstall -c qa
 
 # install hplip
-cd
-wget "https://downloads.sourceforge.net/project/hplip/hplip/3.17.11/hplip-3.17.11.run?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fhplip%2Ffiles%2Fhplip%2F3.17.11%2Fhplip-3.17.11.run%2Fdownload%3Fuse_mirror%3Dnchc&ts=1518793450" -O hplip.run
-chmod +x hplip.run
-./hplip.run
-cd hplip-3.17.11/
-./configure --with-hpppddir=/usr/share/ppd/HP --libdir=/usr/lib --prefix=/usr --enable-qt4 --disable-qt5 --enable-doc-build --disable-cups-ppd-install --disable-foomatic-drv-install --disable-libusb01_build --disable-foomatic-ppd-install --disable-hpijs-install --disable-class-driver --disable-udev_sysfs_rules --disable-policykit --enable-cups-drv-install --enable-hpcups-install --disable-network-build --enable-dbus-build --enable-scan-build --enable-fax-build --enable-apparmor_build
-make
-sudo make install
-cd
+#cd
+#wget "https://downloads.sourceforge.net/project/hplip/hplip/3.17.11/hplip-3.17.11.run?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fhplip%2Ffiles%2Fhplip%2F3.17.11%2Fhplip-3.17.11.run%2Fdownload%3Fuse_mirror%3Dnchc&ts=1518793450" -O hplip.run
+#chmod +x hplip.run
+#./hplip.run
+#cd hplip-3.17.11/
+#./configure --with-hpppddir=/usr/share/ppd/HP --libdir=/usr/lib --prefix=/usr --enable-qt4 --disable-qt5 --enable-doc-build --disable-cups-ppd-install --disable-foomatic-drv-install --disable-libusb01_build --disable-foomatic-ppd-install --disable-hpijs-install --disable-class-driver --disable-udev_sysfs_rules --disable-policykit --enable-cups-drv-install --enable-hpcups-install --disable-network-build --enable-dbus-build --enable-scan-build --enable-fax-build --enable-apparmor_build
+#make
+#sudo make install
+#cd
 
 # install MS-fonts (Arial, Courier, Comic Sans, ...)
 sudo apt-get install -y ttf-mscorefonts-installer
@@ -216,14 +223,14 @@ sudo apt-get install aspell-de
 sudo apt install -y evince
 
 # bluetooth support
-sudo apt install -y blueman pulseaudio-module-bluetooth
-gsettings set org.blueman.plugins.powermanager auto-power-on false
+#sudo apt install -y blueman pulseaudio-module-bluetooth
+#gsettings set org.blueman.plugins.powermanager auto-power-on false
 
 # spotify
-#sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
-#sudo echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
-#sudo apt-get update
-#sudo apt-get install -y spotify-client
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 0DF731E45CE24F27EEEB1450EFDC8610341D9410
+sudo echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt-get update
+sudo apt-get install -y spotify-client
 
 # mpd / ncmpcpp
 sudo apt install -y mpd mpc
@@ -254,23 +261,23 @@ sudo apt install -y zsh
 sudo apt install -y scrot
 
 # atom editor
-cd
-sudo apt install -y gvfs-bin
-wget https://atom.io/download/deb
-sudo dpkg -i deb
-rm deb
+#cd
+#sudo apt install -y gvfs-bin
+#wget https://atom.io/download/deb
+#sudo dpkg -i deb
+#rm deb
 
 # conky
 sudo apt install -y conky
 
 # gimp
-#sudo apt install -y gimp
+sudo apt install -y gimp
 
 # libreoffice
-#sudo apt install -y libreoffice
+sudo apt install -y libreoffice
 
 # Dropbox
-#cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 
 #############################
 # configuration of programs #
@@ -298,7 +305,7 @@ sudo echo "[SeatDefaults]" >> 50-myconfig.conf
 sudo echo "user-session=i3" >> 50-myconfig.conf
 cd
 # create i3 badge for lightdm (unneccessary)
-sudo cp ~/Tilede/gtk/lightdm/unknown_badge.png /usr/share/unity-greeter/
+#sudo cp ~/Tilede/gtk/lightdm/unknown_badge.png /usr/share/unity-greeter/
 
 # if zsh is installed: install oh-my-zsh
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
@@ -311,8 +318,8 @@ mkdir -p ~/.mpd/playlists/
 # set git password cache (store password for 1h)
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
-git config --global user.email robin_luley@web.de
-git config --global user.name STiiixx
+git config --global user.email avoc@posteo.net
+git config --global user.name avoc9
 cd
 
 # create dirs
