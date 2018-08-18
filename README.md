@@ -37,21 +37,21 @@ I would be very happy to have any kind of contribution or advise!
 If you want to install 'Tilede', you have to carefully follow the following steps.
 
 1. Change into your home directory
-cd
+`cd`
 
 2. Clone this repository (This should create a folder called 'tilede')
-git clone --recursive https://www.github.com/avoc9/tilede
+`git clone --recursive https://www.github.com/avoc9/tilede`
 
 3. Copy the installation script into your home directory
-cp ~/tilede/run ~
+`cp ~/tilede/run ~`
 
 4. Edit the installation script ('run'), you can use any text editor, in this case 'nano'
-nano run
+`nano run`
 
-5. Comment or uncomment lines in the installation script according to your needs
+5. Comment or uncomment lines in the installation script according to your needs, save and close the file
 
 6. Run the script
-~/run
+`~/run`
 
 # Issues
 If you find an bug/issue or have a feature request, please look first under the 'Issues' tab in GitHub (https://github.com/avoc9/tilede/issues).
