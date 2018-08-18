@@ -20,6 +20,7 @@ sudo apt install -y build-essential make
 sudo apt install -y xorg i3 i3blocks xdg-utils
 sudo apt install -y imagemagick
 sudo apt install -y feh
+sudo apt install -y mpv
 sudo apt install -y pulseaudio pavucontrol
 #sudo apt install -y wicd
 sudo apt install -y lightdm
@@ -249,6 +250,9 @@ sudo apt install -y evolution
 
 # nautilus (file manager gui)
 sudo apt install -y nautilus
+
+# file sharing through nautilus
+sudo apt install -y nautilus-share samba
 
 # firefox
 sudo apt install -y firefox

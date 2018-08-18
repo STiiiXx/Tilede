@@ -182,10 +182,10 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Ctrl+e exec "i3-nagbar -t warning -m 'Log out?' -b 'Yes' 'i3-msg exit'"
 
 # reboot system
-bindsym $mod+Ctrl+r exec gksu reboot
+bindsym $mod+Ctrl+r exec reboot
 
 # shutdown system
-bindsym $mod+Ctrl+s exec gksu shutdown now
+bindsym $mod+Ctrl+s exec shutdown now
 
 # execute command of workspace
 bindsym F11 exec ~/.config/i3/run_app.py
