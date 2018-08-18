@@ -9,7 +9,7 @@ cd
 sudo apt install -y git
 
 # clone git repo
-git clone https://github.com/STiiiXx/Tilede
+git clone --recursive https://github.com/avoc9/tilede
 
 ####################################
 # install required packages #
@@ -117,10 +117,10 @@ sudo apt install -y software-properties-common
 sudo add-apt-repository -y -u ppa:papirus/papirus
 sudo apt-get install -y papirus-icon-theme
 # install gtk-3.0 theme (Arc-Dark)
-sudo cp -r ~/Tilede/gtk/gtk3/Arc-Dark /usr/share/themes/Arc-Dark/
+sudo cp -r ~/tilede/gtk/gtk3/Arc-Dark /usr/share/themes/Arc-Dark/
 # install gtk-3.0 cursor theme (OpenZone_White)
-sudo cp -r ~/Tilede/gtk/gtk3/OpenZone_White /usr/share/icons/
-sudo cp ~/Tilede/gtk/gtk3/index.theme /usr/share/icons/default/index.theme
+sudo cp -r ~/tilede/gtk/gtk3/OpenZone_White /usr/share/icons/
+sudo cp ~/tilede/gtk/gtk3/index.theme /usr/share/icons/default/index.theme
 
 # install rxvt-unicode (terminal emulator - not supported natively)
 #sudo apt install -y rxvt-unicode
@@ -196,7 +196,7 @@ sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.py | 
 #sudo apt install neovim
 #mkdir -p ~/.vim
 #git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-#cp ~/Tilede/.vim/.ycm_extra_conf.py ~/.vim
+#cp ~/tilede/.vim/.ycm_extra_conf.py ~/.vim
 #nvim -c PluginInstall -c qa
 
 # install hplip
@@ -254,7 +254,7 @@ sudo apt install -y nautilus
 sudo apt install -y firefox
 # fix firefox changing dark input fields
 mkdir -p ~/.mozilla/firefox/*.default/chrome/
-cp ~/Tilede/firefox/userContent.css ~/.mozilla/firefox/*.default/chrome/userContent.css
+cp ~/tilede/firefox/userContent.css ~/.mozilla/firefox/*.default/chrome/userContent.css
 
 # zsh
 sudo apt install -y zsh
@@ -287,17 +287,17 @@ cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 
 # setup ssh
 mkdir -p ~/.ssh/
-cp ~/Tilede/ssh/config ~/.ssh/
+cp ~/tilede/ssh/config ~/.ssh/
 
 # install fonts
-sudo cp -r ~/Tilede/fonts/* /usr/share/fonts/
+sudo cp -r ~/tilede/fonts/* /usr/share/fonts/
 
 # install config files
-cp -r ~/Tilede/.config/ ~
+cp -r ~/tilede/.config/ ~
 
 # mpd / ncmpcpp config
-cp -r ~/Tilede/.mpd/ ~
-cp -r ~/Tilede/.ncmpcpp/ ~
+cp -r ~/tilede/.mpd/ ~
+cp -r ~/tilede/.ncmpcpp/ ~
 
 # set default session to i3
 cd /usr/share/lightdm/lightdm.conf.d/
@@ -307,11 +307,11 @@ sudo echo "[SeatDefaults]" >> 50-myconfig.conf
 sudo echo "user-session=i3" >> 50-myconfig.conf
 cd
 # create i3 badge for lightdm (unneccessary)
-#sudo cp ~/Tilede/gtk/lightdm/unknown_badge.png /usr/share/unity-greeter/
+#sudo cp ~/tilede/gtk/lightdm/unknown_badge.png /usr/share/unity-greeter/
 
 # if zsh is installed: install oh-my-zsh
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-cp ~/Tilede/zsh/.zshrc ~
+cp ~/tilede/zsh/.zshrc ~
 
 # if mpd / ncmpcpp is installed
 echo "Icon=deepin-music" | sudo tee -a /usr/share/applications/ncmpcpp.desktop
@@ -327,8 +327,8 @@ cd
 # create dirs
 mkdir -p ~/Bilder/Screenshots/
 mkdir -p ~/Bilder/Backgrounds/
-cp ~/Tilede/pictures/bg.jpg ~/Bilder/Backgrounds/
-sudo cp ~/Tilede/pictures/bg.jpg /etc/bg.jpg
+cp ~/tilede/pictures/bg.jpg ~/Bilder/Backgrounds/
+sudo cp ~/tilede/pictures/bg.jpg /etc/bg.jpg
 mkdir -p ~/Dokumente/Studium/
 mkdir -p ~/Dokumente/Arbeit/
 mkdir -p ~/Dokumente/Scans/
@@ -343,10 +343,10 @@ rm -r ~/Desktop/
 sudo mkdir -p /media/$USER
 
 # install GTK-3.0 settings file
-sudo cp ~/Tilede/gtk/gtk3/settings.ini /etc/gtk-3.0/settings.ini
+sudo cp ~/tilede/gtk/gtk3/settings.ini /etc/gtk-3.0/settings.ini
 
 # install GTK-2.0 settings file
-cp ~/Tilede/gtk/gtk2/.gtkrc-2.0 ~/.gtkrc-2.0
+cp ~/tilede/gtk/gtk2/.gtkrc-2.0 ~/.gtkrc-2.0
 
 # update gtk themes
 gsettings set org.gnome.desktop.interface gtk-theme Arc-Dark
@@ -354,12 +354,12 @@ gsettings set org.gnome.desktop.wm.preferences theme Arc-Dark
 gsettings set org.gnome.desktop.interface icon-theme Papirus
 
 # install wicd icon theme
-#sudo cp -r ~/Tilede/gtk/gtk3/wicd-pale/ /usr/share/wicd/icons/
+#sudo cp -r ~/tilede/gtk/gtk3/wicd-pale/ /usr/share/wicd/icons/
 
 # install gtk-greeter
 sudo apt remove --purge -y unity-greeter
 sudo apt install -y lightdm-gtk-greeter
-sudo cp ~/Tilede/gtk/lightdm/lightdm-gtk-greeter.conf /etc/lightdm
+sudo cp ~/tilede/gtk/lightdm/lightdm-gtk-greeter.conf /etc/lightdm
 
 #done
 echo "Done. Rebooting now"
