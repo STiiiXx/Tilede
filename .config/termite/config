@@ -56,7 +56,7 @@ highlight = #bfbfbf
 
 # Colors from color0 to color254 can be set
 # black / dark-grey
-color0 = #3f3f3f
+color0 = #2f343f
 # chocolate-brown
 color1 = #836953
 # light-grass-green

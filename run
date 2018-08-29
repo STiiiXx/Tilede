@@ -353,9 +353,9 @@ sudo cp ~/tilede/gtk/gtk3/settings.ini /etc/gtk-3.0/settings.ini
 cp ~/tilede/gtk/gtk2/.gtkrc-2.0 ~/.gtkrc-2.0
 
 # update gtk themes
-gsettings set org.gnome.desktop.interface gtk-theme Arc-Dark
-gsettings set org.gnome.desktop.wm.preferences theme Arc-Dark
-gsettings set org.gnome.desktop.interface icon-theme Papirus
+gsettings set org.gnome.desktop.interface gtk-theme "Arc-Dark"
+#gsettings set org.gnome.desktop.wm.preferences theme "Arc-Dark"
+gsettings set org.gnome.desktop.interface icon-theme "Papirus"
 
 # install wicd icon theme
 #sudo cp -r ~/tilede/gtk/gtk3/wicd-pale/ /usr/share/wicd/icons/
