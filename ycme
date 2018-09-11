@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# install Zenburn theme
+mkdir -p ~/.vim/colors/
+cp ~/.vim/bundle/Zenburn/colors/zenburn.vim ~/.vim/colors/
+
+# install YCM
+pip3 install jedi
+cd ~/.vim
+wget https://raw.githubusercontent.com/Valloric/ycmd/master/.ycm_extra_conf.py
+chmod +x .ycm_extra_conf.py
+cd ~/.vim/bundle/YouCompleteMe/
+./install.py --clang-completer
+cp -r third_party/ ~/.vim/
