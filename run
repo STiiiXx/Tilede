@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# install arronax to edit .desktop files
+
 echo "Installing Tilede"
 
 # go to home dir
