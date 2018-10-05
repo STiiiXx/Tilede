@@ -1,0 +1,28 @@
+! rofi.color-window: argb:EE373B47, #2F343F, #00ff00, #ff0000
+rofi.color-normal: argb:00373B47, #737783, argb:00373B47, argb:00373B47, #f9f9f9
+rofi.color-urgent: argb:00373B47, #cc6666, argb:e54b5160, argb:00373B47, #f9f9f9
+rofi.color-active: argb:00373B47, #65acff, argb:e44b5160, argb:00373B47, #f9f9f9
+rofi.color-window: #222D31, #222D31,  #0000ff
+rofi.width: 17
+rofi.lines: 16
+rofi.font: DejaVuSansMono Nerd Font 11
+rofi.bw: 2
+rofi.padding: 15
+rofi.eh: 1
+rofi.sidebar-mode: true
+rofi.separator-style: none
+rofi.hide-scrollbar: true
+rofi.drun-icon-theme: Papirus
+rofi.show-icons: true
+rofi.location: 2
+rofi.modi: drun,run,ssh
+;rofi.combi-modi: drun,run
+rofi.show: run
+rofi.yoffset: 25
+rofi.lines: 3
+rofi.opacity: 100
+rofi.terminal: terminal
+rofi.disable-history: true
+rofi.display-drun: Apps
+rofi.display-run: Run
+rofi.display-ssh: SSH

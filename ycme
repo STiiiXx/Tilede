@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# install vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# install Plugins
+git clone 
+vim +PluginInstall +qall
+
 # install Zenburn theme
 mkdir -p ~/.vim/colors/
 cp ~/.vim/bundle/Zenburn/colors/zenburn.vim ~/.vim/colors/
